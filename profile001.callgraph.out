@@ -1,0 +1,315 @@
+positions: instr line
+events: inuse_space(kB)
+
+ob=
+fl=(1) D:\Go\src\bufio\bufio.go
+fn=(1) bufio.NewWriterSize
+0x6fd718 564 1028
+
+ob=
+fl=(2) D:\Golang\src\golang.org\x\net\html\parse.go
+fn=(2) golang.org/x/net/html.(*parser).addText
++821510 320 1024
+
+ob=
+fl=(3) D:\Go\src\bytes\bytes.go
+fn=(3) bytes.Join
+0x5051b7 430 609
+
+ob=
+fl=(4) D:\Go\src\runtime\proc.go
+fn=(4) runtime.malg
+-823072 3232 512
+
+ob=
+fl=(5) D:\Go\src\vendor\golang.org\x\net\http2\hpack\huffman.go
+fn=(5) vendor/golang.org/x/net/http2/hpack.addDecoderNode
+0x694881 154 512
+
+ob=
+fl=(4)
+fn=(6) runtime.mstart
+0x437550 1146 0
+cfl=(6) D:\Go\src\runtime\asm_amd64.s
+cfn=(7) runtime.systemstack
+calls=0 0x45d84a 370
+* * 512
+
+ob=
+fl=(4)
+fn=(8) runtime.newproc1
++21214 3285 0
+cfl=(4)
+cfn=(4)
+calls=0 +19783 3232
+* * 512
+
+ob=
+fl=(4)
+fn=(9) runtime.newproc.func1
++132999 3256 0
+cfl=(4)
+cfn=(8)
+calls=0 * 3285
+* * 512
+
+ob=
+fl=(6)
+fn=(7)
++2197 370 0
+cfl=(4)
+cfn=(9)
+calls=0 * 3256
+* * 512
+
+ob=
+fl=(7) D:\Go\src\sync\once.go
+fn=(10) sync.(*Once).doSlow
++139103 66 0
+cfl=(5)
+cfn=(11) vendor/golang.org/x/net/http2/hpack.buildRootHuffmanNode
+calls=0 0x6946bc 137
+* * 512
+
+ob=
+fl=(8) D:\Go\src\vendor\golang.org\x\net\http2\hpack\hpack.go
+fn=(12) vendor/golang.org/x/net/http2/hpack.(*Decoder).Write
+0x692cce 262 0
+cfl=(8)
+cfn=(13) vendor/golang.org/x/net/http2/hpack.(*Decoder).parseHeaderFieldRepr
+calls=0 0x693083 316
+* * 512
+
+ob=
+fl=(8)
+fn=(13)
++949 316 0
+cfl=(8)
+cfn=(14) vendor/golang.org/x/net/http2/hpack.(*Decoder).parseFieldLiteral
+calls=0 +2072 374
+* * 512
+
+ob=
+fl=(8)
+fn=(14)
++1123 374 0
+cfl=(8)
+cfn=(15) vendor/golang.org/x/net/http2/hpack.(*Decoder).readString
+calls=0 +3744 496
+* * 512
+
+ob=
+fl=(8)
+fn=(15)
++2621 496 0
+cfl=(5)
+cfn=(16) vendor/golang.org/x/net/http2/hpack.huffmanDecode
+calls=0 +3523 50
+* * 512
+
+ob=
+fl=(5)
+fn=(17) vendor/golang.org/x/net/http2/hpack.getRootHuffmanNode
++901 127 0
+cfl=(7)
+cfn=(18) sync.(*Once).Do
+calls=0 +1720 57
+* * 512
+
+ob=
+fl=(5)
+fn=(16)
++1 50 0
+cfl=(5)
+cfn=(17)
+calls=0 * 127
+* * 512
+
+ob=
+fl=(7)
+fn=(18)
++818 57 0
+cfl=(7)
+cfn=(10)
+calls=0 0x47f7a9 66
+* * 512
+
+ob=
+fl=(5)
+fn=(11)
++225 137 0
+cfl=(5)
+cfn=(5)
+calls=0 +678 154
+* * 512
+
+ob=
+fl=(9) D:\Go\src\net\http\h2_bundle.go
+fn=(19) net/http.(*http2Framer).ReadFrame
++89106 1760 0
+cfl=(9)
+cfn=(20) net/http.(*http2Framer).readMetaFrame
+calls=0 +111221 2779
+* * 512
+
+ob=
+fl=(9)
+fn=(20)
++22115 2779 0
+cfl=(8)
+cfn=(12)
+calls=0 -95744 262
+* * 512
+
+ob=
+fl=(9)
+fn=(21) net/http.(*http2ClientConn).readLoop
++108872 8103 0
+cfl=(9)
+cfn=(22) net/http.(*http2clientConnReadLoop).run
+calls=0 +111091 8175
+* * 512
+
+ob=
+fl=(9)
+fn=(22)
++2219 8175 0
+cfl=(9)
+cfn=(19)
+calls=0 -130987 1760
+* * 512
+
+ob=
+fl=(10) D:\Go\src\net\http\transport.go
+fn=(23) net/http.(*Transport).dialConnFor
++201886 1308 0
+cfl=(10)
+cfn=(24) net/http.(*Transport).dialConn
+calls=0 +207817 1572
+* * 1028
+
+ob=
+fl=(10)
+fn=(24)
++5931 1572 0
+cfl=(1)
+cfn=(1)
+calls=0 +5974 564
+* * 1028
+
+ob=
+fl=(2)
+fn=(25) golang.org/x/net/html.inBodyIM
++835420 861 0
+cfl=(2)
+cfn=(2)
+calls=0 +821553 320
+* * 1024
+
+ob=
+fl=(2)
+fn=(26) golang.org/x/net/html.inCellIM
++31070 1751 0
+cfl=(2)
+cfn=(25)
+calls=0 * 861
+* * 1024
+
+ob=
+fl=(2)
+fn=(27) golang.org/x/net/html.(*parser).parseCurrentToken
++11967 2266 0
+cfl=(2)
+cfn=(26)
+calls=0 * 1751
+* * 1024
+
+ob=
+fl=(2)
+fn=(28) golang.org/x/net/html.(*parser).parse
++120 2292 0
+cfl=(2)
+cfn=(27)
+calls=0 * 2266
+* * 1024
+
+ob=
+fl=(2)
+fn=(29) golang.org/x/net/html.ParseWithOptions
++819 2350 0
+cfl=(2)
+cfn=(28)
+calls=0 * 2292
+* * 1024
+
+ob=
+fl=(11) D:\Golang\src\github.com\PuerkitoBio\goquery\type.go
+fn=(30) github.com/PuerkitoBio/goquery.NewDocumentFromResponse
++133897 75 0
+cfl=(2)
+cfn=(31) golang.org/x/net/html.Parse
+calls=0 +133971 2309
+* * 1024
+
+ob=
+fl=(2)
+fn=(31)
++74 2309 0
+cfl=(2)
+cfn=(29)
+calls=0 -133897 2350
+* * 1024
+
+ob=
+fl=(12) D:\Golang\src\Spider\models\models.go
+fn=(32) Spider/models.RequestWithHeaders
++513269 260 0
+cfl=(11)
+cfn=(30)
+calls=0 -74 75
+* * 1024
+
+ob=
+fl=(12)
+fn=(33) Spider/models.ResouceToBlob
++5051 381 0
+cfl=(3)
+cfn=(3)
+calls=0 0x5051b7 430
+* * 609
+
+ob=
+fl=(12)
+fn=(34) Spider/models.GetNormalImagePageConentWithoutPath
++13043 940 0
+cfl=(12)
+cfn=(32)
+calls=0 -5051 260
+* * 1024
+
+ob=
+fl=(12)
+fn=(35) Spider/models.AddNormalImageToDatabaseDirectly
++3238 1003 0
+cfl=(12)
+cfn=(33)
+calls=0 -13043 381
+* * 609
+
+ob=
+fl=(13) D:\Golang\src\Spider\controllers\process.go
+fn=(36) Spider/controllers.ProcessImage
+0x9a0307 133 0
+cfl=(12)
+cfn=(34)
+calls=0 -3238 940
+* * 1024
+
+ob=
+fl=(13)
+fn=(37) Spider/controllers.StoringImage
++1196 155 0
+cfl=(12)
+cfn=(35)
+calls=0 0x8775ad 1003
+* * 609

@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/fonts/iconfont.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/css/bootstrapv3.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/htmleaf-demo.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/toast.css">
+    <link rel="stylesheet" href="/static/css/common.css" />
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery-3.4.1.js"></script>
+    <script src="/static/js/nav.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-paginator.js"></script>
+    <script src="/static/js/toast.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="htmleaf-container">
+      <header class="htmleaf-header" style="text-align: left; margin-left: 60px;">
+        <p class="text-justify font-weight-lighter text-monospace text-white bg-dark">
+          To be, or not to be, that is the question:
+          Whether 'tis nobler in the mind to suffer
+          The slings and arrows of outrageous fortune,
+          Or to take arms against a sea of troubles
+          And by opposing end them. To die—to sleep,
+          No more; and by a sleep to say we end
+          The heart-ache and the thousand natural shocks
+          That flesh is heir to: 'tis a consummation
+          Devoutly to be wish'd. To die, to sleep;
+          To sleep, perchance to dream—ay, there's the rub:
+          For in that sleep of death what dreams may come,
+          When we have shuffled off this mortal coil,
+          Must give us pause—there's the respect
+          That makes calamity of so long life.
+          For who would bear the whips and scorns of time,
+          Th'oppressor's wrong, the proud man's contumely,
+          The pangs of dispriz'd love, the law's delay,
+          The insolence of office, and the spurns
+          That patient merit of th'unworthy takes,
+          When he himself might his quietus make
+          With a bare bodkin? Who would fardels bear,
+          To grunt and sweat under a weary life,
+          But that the dread of something after death,
+          The undiscovere'd country, from whose bourn
+          No traveller returns, puzzles the will,
+          And makes us rather bear those ills we have
+          Than fly to others that we know not of?
+          Thus conscience does make cowards of us all,
+          And thus the native hue of resolution
+          Is sicklied o'er with the pale cast of thought,
+          And enterprises of great pitch and moment
+          With this regard their currents turn awry
+          And lose the name of action.
+        </p>
+      </header>
+      <input id="copy-content" type="text" value=""  style="position: absolute; top: 0; left: 0; opacity: 0; z-index: -10;"/>
+      <div class="ckbx-circle">
+        <input type="checkbox" id="ckbx-circle" value="0" name="ckbx-circle">
+        <label for="ckbx-circle"></label>
+      </div>
+    </div>
+    
+    <div class="table-content">
+      <!-- <div id="content" class="content-small row row-cols-1 row-cols-md-6"></div> -->
+      <div class="magnet-container">
+        <div class="row">
+            <div class="col-md-offset-0 col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="bottom-pagination">
+      <ul id="bp-element">
+      </ul>
+    </div>
+    <div class="nav">
+      <div class="nav-top">
+          <div id="mini" style="border-bottom:1px solid rgba(255,255,255,.1)"><img src="/static/img/mini.png" ></div>
+      </div>
+      <ul>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="new times: /?type=newtimesnpic">
+              <a href="./?type=newtimesnopic"><i class="icon-camera icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="hot: /?type=firenopic">
+              <a href="./?type=firenopic"><i class="icon-camera-retro icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="magnet table: /?type=magnet">
+              <a href="./?type=magnet"><i class="icon-table icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="crawling magnets: /crawl/moive?days=10">
+            <a href="#"><i class="icon-film icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="crawling images: /crawl/image?type={newtimes|fire}&download={0|1}{&days=10}">
+            <a href="#"><i class="icon-picture icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="processing unsuccessful pages: /crawl/retrieval?type={newtimes|fire}">
+            <a href="#"><i class="fas fa-acorn icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="load images from database: /load/?table={nwetimes|fire}&path=H:\\...\\static\\img\\{newtimes|fire}\\">
+            <a href="#"><i class="icon-cloud-download icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="store image information to database: /load/to/database/?table={nwetimesnopic|firenopic}">
+            <a href="#"><i class="icon-cloud-upload icon-large"></i></a>
+          </li>
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="clear redis's data: /clear?op={all|cs+cus+cv+ms+cms+mv+hv+ntv}">
+            <a href="#"><i class="icon-cog icon-large"></i></a>
+          </li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      $('.nav-item').tooltip({ boundary: 'window' })
+      function getJsonLength(json) {
+        var jsonLength = 0;
+        for (var i in json) {
+          jsonLength++;
+        }
+        return jsonLength;
+      }
+      var isLoadFromFile = 0
+      var check = document.getElementById("ckbx-circle");
+      function clickHandler(event) {
+        if (check.value == 0) {
+          $('#ckbx-circle').val('1')
+          isLoadFromFile = 1
+        } else {
+          $('#ckbx-circle').val('0')
+          isLoadFromFile = 0
+        }
+      }
+      document.getElementById("ckbx-circle").addEventListener("click", clickHandler, false)
+      $(function(){
+        var element = $('#bp-element');
+        var options = {
+          size:"large",
+          bootstrapMajorVersion:3,
+          currentPage: '{{.PageNo}}',
+          numberOfPages: '{{.PageSize}}',
+          totalPages:'{{.TotalPage}}',
+          onPageClicked: function(e, originalEvent, type, page) {
+            window.location.href = "/?type=" + '{{.PageType}}' + "&page=" + page;
+          }
+        };
+        element.bootstrapPaginator(options);
+        // distinguish different page type
+        if ('{{.PageType}}' == "newtimes" || '{{.PageType}}' == "fire") {
+          $("#content").show();
+          $("#container").hide();
+          var content = document.getElementById("content");
+          var data = JSON.parse('{{.Json}}');
+          // console.log(data)
+          var src = ""
+          for (i = 0; i < '{{.PageCount}}'; i++) { 
+            if (isLoadFromFile) {
+              src = data[i].path
+            } else {
+              src = "data:image/jpg;base64, " + data[i].image;
+              // src = "/static/img/coast.jpg"
+            }
+            content.innerHTML += "<div class=\"col mb-4\">\
+                                    <div class=\"card h-50\">\
+                                      <img src=\"" + src + "\" class=\"card-img-top card-image-hover\" onclick=\"ImageDetail(" + i + ", " + data[i].title + ")\">\
+                                      <div class=\"card-body\">\
+                                          <h5 class=\"card-title\">" + data[i].title + "</h5>\
+                                      </div>\
+                                    </div>\
+                                  </div>";
+          }
+        } else if ('{{.PageType}}' == "magnet") {
+          $("#content").hide();
+          $("#container").show();
+          accordion = document.getElementById("accordion");
+          var data = JSON.parse('{{.Magnets}}');
+          for (i = 0; i < '{{.PageCount}}'; i++) { 
+            accordion.innerHTML += "<div class=\"panel panel-default\">\
+                                      <div class=\"panel-heading\" role=\"tab\" id=\"heading" + i + "\">\
+                                          <h4 class=\"panel-title\">\
+                                              <a class=\"collapsed\" role=\"button\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" + i + "\" aria-expanded=\"false\" aria-controls=\"collapse" + i + "\">\
+                                                " + data[i].no + "\
+                                              </a>\
+                                          </h4>\
+                                      </div>\
+                                      <div id=\"collapse" + i + "\" class=\"panel-collapse collapse\" role=\"tabpanel\" aria-labelledby=\"heading" + i + "\">\
+                                          <div class=\"panel-body\">\
+                                            <table class=\"table table-hover\">\
+                                              <thead>\
+                                                <tr>\
+                                                  <th scope=\"col\">#</th>\
+                                                  <th scope=\"col\">no</th>\
+                                                  <th scope=\"col\">time</th>\
+                                                  <th scope=\"col\">size</th>\
+                                                  <th scope=\"col\">magnet</th>\
+                                                  <th scope=\"col\"></th>\
+                                                  <th scope=\"col\">hash</th>\
+                                                  <th scope=\"col\"></th>\
+                                                </tr>\
+                                              </thead>\
+                                              <tbody id=\"table-content" + i + "\">\
+                                              </tbody>\
+                                            </table>\
+                                          </div>\
+                                      </div>\
+                                    </div>";
+                                    
+            tableContent = document.getElementById("table-content" + i);
+            var items = JSON.parse(data[i].magnets);
+            for (j = 0; j < items.length; j++) {
+              tableContent.innerHTML += "<tr>\
+                                          <th scope=\"row\">" + (j + 1) + "</th>\
+                                          <td>" + items[j].no + "</td>\
+                                          <td>" + items[j].time + "</td>\
+                                          <td>" + items[j].size + "</td>\
+                                          <td>" + items[j].magnet + "</td>\
+                                          <td>\
+                                            <i id=\"copy-magnet\" class=\"icon-copy icon-large copy-hover\" value=\"" + items[j].magnet + "\" onclick=\"CopyMagnet(this)\"></i>\
+                                          </td>\
+                                          <td>" + items[j].hash + "</td>\
+                                          <td>\
+                                            <i id=\"copy-hash\" class=\"icon-copy icon-large copy-hover\" value=\"" + items[j].hash + "\" onclick=\"CopyHash(this)\"></i>\
+                                          </td>\
+                                        </tr>"
+            }
+          }
+        }
+        
+      });
+      function ImageDetail(index, title) {
+          window.location.href = "/imagedetail?page=" + '{{.PageNo}}' + "&index=" + index + "&title=" + title + "&file=" + isLoadFromFile
+      }
+      function CopyMagnet(copy) {
+        // console.log(copy.getAttribute("value"))
+        var inputElement =  document.getElementById("copy-content");
+        inputElement.value = copy.getAttribute("value");
+        inputElement.select();
+        document.execCommand("Copy");
+        showtoastFromDocumentCenter();
+      }
+      function CopyHash(copy) {
+        // console.log(copy.getAttribute("value"))
+        var inputElement =  document.getElementById("copy-content");
+        inputElement.value = copy.getAttribute("value");
+        inputElement.select();
+        document.execCommand("Copy");
+        showtoastFromDocumentCenter();
+      }
+      function showtoastFromDocumentCenter() {
+        // showMessage('复制成功',3000,true,'bounceInUp-hastrans','bounceOutDown-hastrans');
+        $('body').toast({
+          position:'fixed',
+          content:'复制成功',
+          duration:1500,
+          isCenter:true,
+          background:'rgba(230,0,0,0.5)',
+          animateIn:'bounceInUp-hastrans',
+          animateOut:'bounceOutDown-hastrans',
+        });
+	    }
+    </script>
+  </body>
+</html>

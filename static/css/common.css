@@ -1,0 +1,161 @@
+html, body {
+  height : 100%;
+  display: block;
+  overflow-y: auto;
+}
+
+.content-small {
+    padding: 2.5rem;    
+    margin-right: 0;
+    margin-left: 200px;
+    border-width: 2rem;
+}
+
+.content-big {
+    padding: 2.5rem;    
+    margin-right: 0;
+    margin-left: 40px;
+    border-width: 2rem;
+}
+
+.bottom-pagination {
+    position: fixed;
+    left: 40%;
+    bottom: 10px;
+    width: auto;
+    height: auto;
+}   
+
+.card-image-hover:hover {
+    cursor:pointer;
+}
+
+.ckbx-circle {
+    position: absolute;
+    float: right;
+    font-size: 24px;
+    top: 20px;
+    right: 20px;
+}
+
+.ckbx-circle input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+}
+
+.ckbx-circle label {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  width: 1em;
+  height: 1em;
+}
+
+.ckbx-circle label:before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  transition: background 0.1s 0.1s ease;
+  background: #333;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+}
+
+.ckbx-circle label:after {
+  content: '';
+  position: absolute;
+  width: .6em;
+  height: .6em;
+  border-radius: 100%;
+  left: .2em;
+  top: .2em;
+  transition: all 0.2s ease;
+  background: #F25F5C;
+  animation: switch-off-circle .2s ease-out;
+}
+
+.ckbx-circle input[type=checkbox]:checked + label:after {
+  background: #70C1B3;
+  width: 1em;
+  height: 1em;
+  top: 0;
+  left: 0;
+  animation: switch-on-circle .2s ease-out;
+}
+
+.table-content {
+  width: 90%;
+  height: auto;
+  padding-left: 252px;
+}
+
+.magnet-container {
+  width: 100%;
+}
+
+.magnet-container a:hover,a:focus{
+  text-decoration: none;
+  outline: none;
+}
+.container .list {
+  margin-left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#accordion .panel{
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+}
+#accordion .panel:last-child{
+  border-bottom: 1px solid #e8e8e8;
+}
+#accordion .panel-heading{
+  padding: 0;
+}
+#accordion .panel-title a{
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #635858;
+  background: #fff;
+  padding: 15px 20px 15px 47px;
+  position: relative;
+  transition: all 0.5s ease 0s;
+}
+#accordion .panel-title a:before{
+  content: "\f068";
+  font-family: 'FontAwesome';
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 32px;
+  border-radius: 50%;
+  background: #888bc2;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  transition: all 0.3s ease 0s;
+}
+#accordion .panel-title a.collapsed:before{
+  content: "\f067";
+}
+#accordion .panel-body{
+  font-size: 15px;
+  color: #635858;
+  line-height: 25px;
+  border: none;
+  padding: 14px 20px 14px 47px;
+}
+
+.copy-hover {
+  cursor: pointer;
+}

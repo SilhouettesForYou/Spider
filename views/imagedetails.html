@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{.Title}}</title>
+	
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/htmleaf-demo.css">
+	<link rel="stylesheet" href="/static/css/baguetteBox.min.css">
+	<link rel="stylesheet" href="/static/css/gallery-grid.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<div class="container gallery-container">
+
+		    <h1>{{.Title}}</h1>
+		    
+		    <div class="tz-gallery">
+
+		        <div id="content" class="row">
+		        </div>
+
+		    </div>
+
+		</div>
+		
+	</div>
+	
+	<script type="text/javascript" src="/static/js/baguetteBox.min.js"></script>
+	<script type="text/javascript">
+		var content = document.getElementById("content");
+		var data = JSON.parse('{{.Json}}');
+        for (i = 0; i < '{{.ImageCount}}'; i++) { 
+			if ('{{.IsLoadFromFile}}' == "1") {
+				src = data[i].path
+			} else {
+				var src = "data:image/jpg;base64, " + data[i].image;
+			}
+			
+            content.innerHTML += "<div class=\"col-sm-6 col-md-4\">\
+		                			<a class=\"lightbox\" href=\"" + data[i].path + "\">\
+		                    		  <img src=\"" + src + "\" alt=\"rails\">\
+		                			</a>\
+		            			  </div>";
+        }
+		baguetteBox.run('.tz-gallery');
+	</script>
+</body>
+</html>

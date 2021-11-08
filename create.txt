@@ -1,0 +1,113 @@
+CREATE TABLE douban (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `movie_id` int(11) unsigned NOT NULL COMMENT '电影id',
+  `movie_name` varchar(100) DEFAULT NULL COMMENT '电影名称',
+  `movie_pic` varchar(200) DEFAULT NULL COMMENT '电影图片',
+  `movie_director` varchar(50) DEFAULT NULL COMMENT '电影导演',
+  `movie_writer` varchar(50) DEFAULT NULL COMMENT '电影编剧',
+  `movie_country` varchar(50) DEFAULT NULL COMMENT '电影产地',
+  `movie_language` varchar(50) DEFAULT NULL COMMENT '电影语言',
+  `movie_main_character` varchar(250) DEFAULT NULL COMMENT '电影主演',
+  `movie_type` varchar(50) DEFAULT NULL COMMENT '电影类型',
+  `movie_on_time` varchar(100) DEFAULT NULL COMMENT '电影上映时间',
+  `movie_span` varchar(20) DEFAULT NULL COMMENT '电影时长',
+  `movie_grade` varchar(5) DEFAULT NULL COMMENT '电影评分',
+  `remark` varchar(500) DEFAULT '' COMMENT '备注',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  `status` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `idx_movie_id` (`movie_id`),
+  KEY `idx_create_time` (`create_time`),
+  KEY `idx_modify_time` (`modify_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='电影信息表';
+
+
+CREATE TABLE pomegranate (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `movie` varchar(16) NOT NULL COMMENT '电影ID',
+  `actor` varchar(250) DEFAULT NULL COMMENT '演员',
+  `typeid` int(10) unsigned NOT NULL COMMENT '类型ID',
+  `type` varchar(50) DEFAULT NULL COMMENT '类型名称',
+  `span` varchar(20) DEFAULT NULL COMMENT '时长',
+  `size` int(16) unsigned NOT NULL COMMENT '大小',
+  `create` varchar(20) DEFAULT NULL COMMENT '创建时间',
+  `torrent` varchar(50) NOT NULL COMMENT 'Torrent',
+  `remark` varchar(500) DEFAULT '' COMMENT '备注',
+  PRIMARY KEY(`id`),
+  KEY `moive` (`movie`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='信息表';
+
+CREATE TABLE torrents (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `loc` varchar(20) DEFAULT NULL COMMENT '本地地址'
+  `movie` varchar(16) NOT NULL COMMENT '电影ID'
+)
+
+########################
+# Current Table Define #
+########################
+
+# Magnet
+CREATE TABLE magnet (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `no` varchar(50) NOT NULL COMMENT '电影ID',
+  `time` varchar(20) DEFAULT NULL COMMENT '时间',
+  `size` varchar(20) DEFAULT NULL COMMENT '大小',
+  `magnet` longtext DEFAULT NULL COMMENT 'Magnet',
+  `hash` varchar(40) DEFAULT NULL COMMENT 'Hash',
+  PRIMARY KEY(`id`),
+  KEY `no` (`no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='磁力表';
+
+# Image
+CREATE TABLE image (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `no` varchar(50) NOT NULL COMMENT '电影ID',
+  `path` varchar(150) NULL COMMENT '路径',
+  `data` MEDIUMBLOB COMMENT '图片',
+  PRIMARY KEY(`id`),
+  KEY `no` (`no`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片表';
+
+# Newtimes
+CREATE TABLE newtimes (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NULL COMMENT '名称',
+  `path` varchar(200) NULL COMMENT '路径',
+  `data` MEDIUMBLOB COMMENT '图片',
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片表';
+
+CREATE TABLE newtimesnopic (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NULL COMMENT '名称',
+  `path` varchar(200) NULL COMMENT '路径',
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片表';
+
+# Fire
+CREATE TABLE fire (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NULL COMMENT '名称',
+  `path` varchar(150) NULL COMMENT '路径',
+  `data` MEDIUMBLOB COMMENT '图片',
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='图片表';
+
+# Movie Heaven
+CREATE TABLE heaven (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `translatename` varchar(100) NULL COMMENT '译名',	 
+	`moviename` varchar(100) NULL COMMENT '片名',		  
+	`year` varchar(50) NULL COMMENT '年代',			  
+	`country` varchar(50) NULL COMMENT '产地',			  
+	`category` varchar(50) NULL COMMENT '类别',		  
+	`language` varchar(50) NULL COMMENT '语言',	 	  
+	`subtitle` varchar(50) NULL COMMENT '字幕',		  
+	`url` varchar(50) NULL COMMENT '连接',			  
+	`poster` MEDIUMBLOB COMMENT '海报',	  
+	`image` MEDIUMBLOB COMMENT '图片',		  
+	`magnet` varchar(300) NULL COMMENT 'FTP',
+  PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='电影天堂';
